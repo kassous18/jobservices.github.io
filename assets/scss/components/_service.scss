@@ -1,0 +1,268 @@
+.service {
+    &--one {
+        .service {
+            &__item {
+                @extend %bg-white, %hidden;
+                @include border-radius(10px);
+                &:hover {
+                    .service {
+                        &__thumb {
+                            img {
+                                @include transform(scale(1.1));
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %hidden;
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__content {
+                @extend %p-30;
+                .lab-btn {
+                    padding: 10px 30px;
+                }
+            }
+            &__pagination {
+                span {
+                    width: 24px;
+                    height: 24px;
+                    line-height: 24px;
+                    opacity: 1;
+                    @extend %text-center, %d-inline-block, %bg-title, %white-color, %m-5, %c-pointer, %text-700;
+                    @include border-radius(100%);
+                    @include font-size(12px);
+                    &.swiper-pagination-bullet-active {
+                        background: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &--two {
+        .col-12 {
+            &:nth-child(2n) {
+                .service {
+                    &__item {
+                        &:hover {
+                            .service {
+                                &__content {
+                                    h5 {
+                                        a {
+                                            color: $theme-color-3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__thumb {
+                        &::after {
+                            background: rgba($theme-color-3, $alpha: .9);
+                        }
+                    }
+                    &__content {
+                        ul {
+                            li {
+                                i {
+                                    color: $theme-color-3;
+                                }
+                            }
+                        }
+                        .lab-btn {
+                            background: $theme-color-3;
+                        }
+                    }
+                }
+            }
+            &:nth-child(3n) {
+                .service {
+                    &__item {
+                        &:hover {
+                            .service {
+                                &__content {
+                                    h5 {
+                                        a {
+                                            color: $theme-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__thumb {
+                        &::after {
+                            background: rgba($theme-color, $alpha: .9);
+                        }
+                    }
+                    &__content {
+                        ul {
+                            li {
+                                i {
+                                    color: $theme-color;
+                                }
+                            }
+                        }
+                        .lab-btn {
+                            background: $theme-color;
+                        }
+                    }
+                }
+            }
+            &:nth-child(4n) {
+                .service {
+                    &__item {
+                        &:hover {
+                            .service {
+                                &__content {
+                                    h5 {
+                                        a {
+                                            color: $facebook;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__thumb {
+                        &::after {
+                            background: rgba($facebook, $alpha: .9);
+                        }
+                    }
+                    &__content {
+                        ul {
+                            li {
+                                i {
+                                    color: $facebook;
+                                }
+                            }
+                        }
+                        .lab-btn {
+                            background: $facebook;
+                        }
+                    }
+                }
+            }
+        }
+        .service {
+            &__item {
+                @extend %bg-white, %hidden;
+                @include border-radius(10px);
+                @include transition($transition);
+                &:hover {
+                    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                    .service {
+                        &__thumb {
+                            &::after {
+                                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+                                height: 100%;
+                            }
+                        }
+                        &__icon {
+                            width: 60px;
+                            height: 60px;
+                            left: 50%;
+                            bottom: 50%;
+                            transform: translate(-50%, 50%);
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    color: $theme-color-2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %rel;
+                &::after {
+                    @extend %abs;
+                    width: 100%;
+                    height: 100px;
+                    bottom: 0;
+                    left: 0;
+                    background: rgba($theme-color-2, $alpha: .9);
+                    clip-path: polygon(50% 40%, 100% 0, 100% 100%, 0 100%, 0 0);
+                    @include transition($transition);
+                }
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__icon {
+                @extend %abs;
+                bottom: 30px;
+                left: 30px;
+                width: 40px;
+                height: 40px;
+                z-index: 1;
+                @include transition($transition);
+            }
+            &__content {
+                @extend %p-30;
+                h5 {
+                    @include breakpoint(xl) {
+                        @include breakpoint(max-xxl) {
+                            font-size: 20px;
+                        }
+                    }
+                    a {
+                        @extend %text-capitalize;
+                    }
+                }
+                .lab-btn {
+                    padding: 10px 30px;
+                    background: $theme-color-2;
+                }
+                ul {
+                    @extend %mb-20;
+                    li {
+                        padding-block: 5px;
+                        @extend %text-capitalize;
+                        i {
+                            color: $theme-color-2;
+                            @extend %mr-5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--details {
+        .service {
+            &__maincontent {
+                @extend %p-30, %bg-white;
+                @include border-radius(10px);
+                img {
+                    @extend %mb-25, %w-100, %h-100;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                form {
+                    @extend %mt-30;
+                    input, textarea {
+                        @extend %bg-white, %p-20;
+                    }
+                    .lab-btn {
+                        @extend %border-none;
+                    }
+                }
+                h5 {
+                    @extend %text-600;
+                }
+            }
+        }
+    }
+}

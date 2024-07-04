@@ -1,0 +1,174 @@
+.banner {
+    &--one {
+        @extend %hidden;
+        @include breakpoint(max-xl) {
+            padding-top: 120px;
+        }
+        .banner {
+            &__content {
+                @include breakpoint(xl) {
+                    @include breakpoint(max-xxl) {
+                        position: relative;
+                        z-index: 2;
+                    }
+                }
+                h2 {
+                    @include font-size(64px);
+                    @extend %text-uppercase, %text-700, %white-color;
+                    span {
+                        color: $theme-color-2;
+                    }
+                    @include breakpoint(xl) {
+                        @include breakpoint(max-xxl) {
+                            font-size: 52px;
+                        }
+                    }
+                }
+                h6 {
+                    @extend %text-uppercase, %white-color, %mb-15, %text-600;
+                    letter-spacing: 2px;
+                }
+                p {
+                    @include font-size(18px);
+                    @extend %white-color, %mb-40;
+                }
+            }
+            &__discount {
+                padding: 5px 15px;
+                background: $theme-color-2;
+                @extend %white-color, %d-inline-block, %text-700, %text-uppercase, %mb-15;
+                @include font-size(14px);
+            }
+            &__thumb {
+                @extend %rel;
+                &::after {
+                    @extend %abs, %d-none;
+                    right: 0px;
+                    top: 35px;
+                    width: 300px;
+                    height: 260px;
+                    animation: lab_zoomin 5s linear infinite;
+                    background: url(../../assets/images/banner/shape/01.png) no-repeat;
+                    @include breakpoint(lg) {
+                        display: block;
+                    }
+                    @include breakpoint(xxl) {
+                        right: -90px;
+                        top: 70px;
+                        
+                    }
+                }
+                >img {
+                    @include breakpoint(xl) {
+                        margin-left: -150px;
+                        @include breakpoint(max-xxl) {
+                            z-index: 1;
+                            position: relative;
+                        }
+                    }
+                }
+                &--content {
+                    @extend %abs, %text-center, %d-none;
+                    right: 0;
+                    top: 100px;
+                    animation: lab_zoomin 5s linear infinite;
+                    @include breakpoint(lg) {
+                        display: block;
+                        right: 60px;
+                    }
+                    @include breakpoint(xxl) {
+                        right: -40px;
+                        top: 115px;
+                    }
+                    span {
+                        @extend %white-color, %text-500;
+                        @include font-size(20px);
+                    }
+                    h5 {
+                        color: $theme-color-2;
+                        @extend %mb-0;
+                    }
+                }
+            }
+        }
+    }
+    &--two {
+        padding-block: 80px;
+        @include breakpoint(max-md) {
+            // background-position: left;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba($white-color, $alpha: .7);
+            }
+        }
+        .banner {
+            &__thumb {
+                @extend %abs, %hidden, %d-none;
+                left: 35px;
+                top: 0px;
+                @include border-radius(100%);
+                @include breakpoint(md) {
+                    display: block;
+                }
+            }
+            &__content {
+                @extend %flex, %justify-start, %rel;
+                @include border-radius(100%);
+                @include breakpoint(max-md) {
+                    position: relative;
+                    z-index: 1;
+                }
+                @include breakpoint(md) {
+                    width: 640px;
+                    height: 640px;
+                    align-content: center;
+                    justify-content: center;
+                    text-align: center;
+                    background: url(../../assets/images/banner/shape/bg.jpg) no-repeat;
+                    &::after, &::before {
+                        position: absolute;
+                        content: "";
+                        animation: lab_round 25s linear infinite;
+                    }
+                    &::before {
+                        top: 90px;
+                        right: 120px;
+                        width: 70px;
+                        height: 80px;
+                        background: url(../../assets/images/banner/shape/02.png) no-repeat;
+                    }
+                    &::after {
+                        left: 140px;
+                        bottom: 120px;
+                        width: 50px;
+                        height: 50px;
+                        background: url(../../assets/images/banner/shape/03.png) no-repeat;
+                    }
+                }
+
+                h2 {
+                    @include font-size(60px);
+                    @extend %text-uppercase, %title-color;
+                    @include breakpoint(md) {
+                        color: $white-color;
+                    }
+                }
+                p {
+                    @extend %title-color, %mb-30;
+                    @include font-size(20px);
+                    @include breakpoint(md) {
+                        color: $white-color;
+                        max-width: 80%;
+                    }
+                }
+                .lab-btn {}
+            }
+        }
+    }
+}

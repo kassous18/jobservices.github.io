@@ -1,0 +1,144 @@
+.testimonial {
+    .section__header {
+        h2, h5 {
+            @extend %white-color;
+        }
+    }
+    .swiper-slide {
+        &.swiper-slide-next {
+            .testimonial__rating {
+                .rating {
+                    background: $theme-color-3;
+                }
+                span {
+                    background: $facebook;
+                }
+            }
+        }
+    }
+    &__area {
+        margin-top: 120px;
+    }
+    &__navigation {
+        @extend %flex;
+        @extend %mt-30;
+        .navi {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: rgba($white-color, $alpha: .3);
+            @extend %white-color;
+            @extend %m-5;
+            @extend %text-center;
+            @include transition($transition);
+            @include border-radius(100%);
+            &:hover {
+                background-color: $theme-color;
+            }
+        }
+    }
+    &__inner {
+        @extend %flex, %text-center, %rel, %align-items-center;
+        background-color: $white-color;
+        padding: 30px 15px;
+        gap: 20px;
+        @include border-radius(10px);
+        @include breakpoint(sm) {
+            padding-left: 0;
+            text-align: left;
+            padding: 30px;
+            gap: 60px;
+        }
+    }
+    &__thumb {
+        width: 100%;
+        z-index: 1;
+        @extend %rel;
+        @include breakpoint(sm) {
+            width: 100px;
+        }
+        .thumb {
+            @extend %rel;
+            width: 140px;
+            @include breakpoint(max-sm) {
+                margin-inline: auto;
+            }
+            img {
+                @extend %rel;
+                z-index: 1;
+                @include border-radius(100%);
+            }
+
+        }
+        .shapeimg {
+            @extend %abs, %d-none;
+            top: -40px;
+            left: 0px;
+            @include breakpoint(sm) {
+                display: block;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+        @extend %rel;
+        @include breakpoint(sm) {
+            width: calc(100% - 160px);
+
+        }
+        .name {
+            @extend %mb-10;
+            @include breakpoint(max-sm) {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            h5 {
+                @extend %mb-0, %text-capitalize;
+            }
+        }
+        .img {
+            @include breakpoint(max-sm) {
+                display: none;
+            }
+            @include breakpoint(lg) {
+                @include breakpoint(max-xl) {
+                    display: none;
+                }
+            }
+        }
+        p {
+            @extend %mb-20;
+        }
+        &--top {
+            @extend %flex, %justify-between;
+        }
+        .shapeimg {
+            @extend %abs;
+            right: 0;
+            bottom: -10px;
+        }
+        
+    }
+    &__rating {
+        @extend %flex, %align-items-center;
+        @include breakpoint(max-sm) {
+            justify-content: center;
+        }
+        .rating {
+            @extend %d-inline-block;
+            padding: 5px 10px;
+            background: $theme-color-2;
+            @include border-radius(2px 0 0 2px);
+            i {
+                @extend %white-color;
+                @include font-size(14px);
+            }
+        }
+        span {
+            @extend %d-inline-block, %white-color, %bg-theme;
+            padding: 5px 10px;
+            @include border-radius(0 2px 2px 0);
+            
+        }
+    }
+}

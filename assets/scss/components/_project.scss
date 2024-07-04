@@ -1,0 +1,204 @@
+.project {
+    .section__header {
+        max-width: 750px;
+    }
+
+    &__item {
+        @extend %rel, %hidden;
+        @include border-radius(10px);
+        &:hover {
+            .project {
+                &__content {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__thumb {
+        img {
+            @extend %w-100;
+        }
+    }
+
+    &__content {
+        @extend %abs,
+        %w-100,
+        %h-100,
+        %p-30;
+        background-color: rgba($theme-color-3, $alpha: .9);
+        top: 0;
+        left: 0;
+        opacity: 0;
+        @include transition($transition);
+
+        h5 {
+            @extend %mb-5;
+
+            a {
+                @extend %white-color;
+            }
+        }
+
+        span {
+            @extend %white-color,
+            %d-block,
+            %text-capitalize;
+        }
+
+        &::after {
+            @extend %abs;
+            bottom: 0;
+            left: 0;
+            border-bottom: 120px solid $theme-color;
+            border-right: 120px solid transparent;
+            @include breakpoint(sm) {
+                @include breakpoint(max-md) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__icon {
+        width: 56px;
+        height: 56px;
+        line-height: 52px;
+        border-radius: 100%;
+        z-index: 1;
+        left: 30px;
+        bottom: 30px;
+        border: 2px solid $theme-color;
+        @include transition($transition);
+        @extend %text-center,
+        %theme-color,
+        %bg-white,
+        %d-inline-block,
+        %abs;
+        @include breakpoint(sm) {
+            @include breakpoint(max-md) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: rotate(90deg);
+            }
+        }
+
+        @include breakpoint(lg) {
+            @include breakpoint(max-xl) {
+                // display: none;
+            }
+        }
+    }
+
+    &--one {
+        .project {
+            &__icon {
+                img {
+                    @include transition($transition);
+                }
+            }
+        }
+    }
+    &--two {
+        .project {
+            &__content {
+                padding: 0;
+                h5 {
+                    padding-inline: 30px;
+                    padding-top: 30px;
+                }
+                span {
+                    padding-inline: 30px;
+                }
+            }
+        }
+    }
+
+    &--details {
+        .project {
+            &__item {
+                @extend %p-30,
+                %bg-white;
+            }
+
+            &__thumb {
+                @extend %mb-30;
+            }
+
+            &__content {
+                position: static;
+                opacity: 1;
+                background: transparent;
+                @extend %p-0;
+
+                &::after {
+                    @extend %d-none;
+                }
+                h5 {
+                    @extend %text-600;
+                }
+            }
+
+            &__info {
+                border: 1px solid #F2F6F9;
+                @extend %mr-30,
+                %bg-white;
+                margin-top: -50px;
+
+                @include breakpoint(lg) {
+                    margin-top: -125px;
+                }
+
+                .title {
+                    @extend %p-30;
+                    border-bottom: 1px solid #F2F6F9;
+
+                    h5 {
+                        @extend %mb-0,
+                        %title-color;
+                    }
+                }
+
+                .content {
+                    ul {
+                        @extend %flex;
+
+                        li {
+                            padding: 15px 30px;
+                            border-bottom: 1px solid #F2F6F9;
+                            @extend %w-100;
+
+                            &:nth-last-child(1) {
+                                border-bottom: none;
+                            }
+
+                            @include breakpoint(sm) {
+                                width: 50%;
+
+                                &:nth-last-child(2) {
+                                    border-bottom: none;
+                                }
+                            }
+
+                            .name {
+                                @extend %theme-color,
+                                %text-capitalize;
+                            }
+
+                            .info {
+                                @extend %text-capitalize;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-slide.swiper-slide-duplicate {
+        display: none;
+    }
+}

@@ -1,0 +1,97 @@
+.contact {
+    &--one {
+        background: $section-bg-color;
+        .contact {
+            &__area {
+                background: url(../../assets/images/contact/bg.jpg) no-repeat;
+                background-position: left;
+                background-size: cover;
+                padding: 30px;
+                @extend %rel;
+                @include border-radius(10px);
+                @include breakpoint(sm) {
+                    padding: 40px;
+                }
+                &::after {
+                    @extend %abs, %d-none;
+                    width: 40px;
+                    height: 40px;
+                    top: calc(100% + 5px);
+                    left: calc(100% + 5px);
+                    background: url(../../assets/images/contact/bg-shape2.png) no-repeat;
+                    @include breakpoint(xl) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    &--two {
+        // background: $section-bg-color;
+        background-repeat: no-repeat;
+        .section {
+            &__header, &__wrapper {
+                z-index: 1;
+                @extend %rel;
+            }
+        }
+        .contact {
+            &__area {
+                transform: translateY(-40px);
+                @extend %bg-white, %rel, %hidden;
+                @include padding(40px);
+                @include border-radius(10px);
+                &::after {
+                    @extend %abs;
+                    width: 50%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    @include breakpoint(lg) {
+                        background: $theme-color-3;
+                    }
+                }
+                &::before {
+                    @extend %abs;
+                    width: 50%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    @include breakpoint(lg) {
+                        background: url(../../assets/images/contact/bg-shape.png) no-repeat;
+                    }
+                }
+            }
+            &__thumb {
+                @extend %rel;
+                z-index: 1;
+                animation: lab_run_top_y 5s linear infinite;
+            }
+        }
+    }
+    &--three {
+        .contact {
+            &__item {
+                @extend %text-center, %bg-white;
+                padding: 60px 30px;
+            }
+            &__icon {
+                @extend %mb-30;
+            }
+            &__content {
+                h5 {
+                    @extend %mb-20;
+                }
+                p {
+                    @extend %mb-0;
+                    span {
+                        @extend %theme-color;
+                    }
+                    b {
+                        @extend %d-block, %text-400;
+                    }
+                }
+            }
+        }
+    }
+}

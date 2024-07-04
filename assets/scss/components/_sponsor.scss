@@ -1,0 +1,32 @@
+.sponsor {
+    &--one {
+        padding-block: 60px;
+        .section {
+            &__header {
+                h5 {
+                    @extend %title-color;
+                }
+            }
+        }
+    }
+    &--two {
+        padding-bottom: 90px;
+        .section {
+            &__header {
+                h5 {
+                    @extend %title-color;
+                }
+            }
+        }
+    }
+    &__item {
+        @include border-radius(4px);
+        @extend %hidden;
+    }
+    &__thumb {
+        @extend %text-center;
+        img {
+            @extend %w-100;
+        }
+    }
+}

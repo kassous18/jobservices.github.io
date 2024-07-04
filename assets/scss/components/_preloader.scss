@@ -1,0 +1,34 @@
+.preloader {
+  @extend %p-fixed,
+  %d-grid,
+  %place-i-center,
+  %w-100,
+  %h-100;
+  background-color: $body-bg-color;
+  z-index: 9999999;
+
+  .loader {
+    animation: lab_round 5s linear infinite;
+  }
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

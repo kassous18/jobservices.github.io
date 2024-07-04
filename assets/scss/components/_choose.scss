@@ -1,0 +1,42 @@
+.choose {
+    &--one {
+        @extend %rel;
+        
+        &::after {
+            @extend %abs, %d-none;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: url(../../assets/images/choose/bg.jpg) no-repeat;
+            background-position: center;
+            @include breakpoint(lg) {
+                width: 35%;
+                display: block;
+            }
+            @include breakpoint(xl) {
+                width: 50%;
+            }
+        }
+        .section {
+            &__header {
+                p {
+                    margin-left: 0;
+                    max-width: 600px;
+                }
+            }
+        }
+        .choose {
+            &__thumb {
+                @extend %mb-20;
+            }
+            &__content {
+                h5 {
+                    span {
+                        // @extend %text-400;
+                    }
+                }
+            }
+        }
+    }
+}

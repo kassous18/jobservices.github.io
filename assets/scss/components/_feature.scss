@@ -1,0 +1,55 @@
+.feature {
+    &--one {
+        .feature {
+            &__item {
+                padding: 60px 30px;
+                &:hover {
+                    .feature {
+                        &__thumb {
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                .text-btn {
+                    @extend %mt-20;
+                }
+            }
+        }
+    }
+    
+    &__area {
+        margin-top: -100px;
+        z-index: 99;
+        @extend %rel;
+    }
+    &__item {
+        padding: 60px 30px;
+        @extend %bg-white, %rel;
+        @include border-radius(10px);
+        @include transition($transition);
+        &:hover {
+            // box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.1);
+            box-shadow: 0px 10px 10px 0px rgba(85, 85, 85, 0.10);
+        }
+    }
+    &__thumb {
+        @extend %mb-30;
+    }
+    &__content {
+        h5 {}
+        p {
+            @extend %mb-0;
+        }
+    }
+}

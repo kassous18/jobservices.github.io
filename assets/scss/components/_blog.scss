@@ -1,0 +1,300 @@
+.blog {
+    &--one {
+        .col-12 {
+            &:nth-child(1) {
+                .blog {
+                    &__content {
+                        .lab-btn {
+                            background: $theme-color-2;
+                        }
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .blog {
+                    &__content {
+                        .lab-btn {
+                            background: $theme-color-3;
+                        }
+                    }
+                }
+            }
+        }
+        .blog {
+            &__item {
+                @extend %bg-white, %hidden;
+                @include border-radius(10px);
+                @include transition($transition);
+                &:hover {
+                    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+                    .blog {
+                        &__thumb {
+                            img {
+                                transform: scale(1.2);
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %hidden;
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__content {
+                @extend %p-30;
+                ul {
+                    @extend %flex;
+                    gap: 0 30px;
+                    li {
+                        @extend %text-capitalize, %theme-color;
+                        padding-block: 8px;
+                        font-size: 15px;
+                        @include breakpoint(sm) {
+                            font-size: 16px;
+                        }
+                        @include breakpoint(md) {
+                            @include breakpoint(max-lg) {
+                                font-size: 15px;
+                            }
+                        }
+                        &:last-child {
+                            color: $theme-color-3;
+                        }
+                        i {
+                            @extend %mr-5;
+                        }
+                    }
+                }
+                h5 {
+                    @extend %mb-20;
+                    a {
+                        @extend %text-2;
+                    }
+                }
+                .lab-btn {
+                    padding: 10px 30px;
+                    &:hover {
+                        @extend %bg-theme;
+                    }
+                }
+            }
+        }
+    }
+    &--two {
+        .blog {
+            &__item {
+                @extend %bg-white, %hidden, %p-15;
+                @include border-radius(10px);
+                @include transition($transition);
+                &:hover {
+                    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+                    .blog {
+                        &__thumb {
+                            img {
+                                transform: scale(1.2);
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %hidden;
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__content {
+                @extend %p-15;
+                ul {
+                    @extend %flex, %mb-15;
+                    padding-block: 15px;
+                    border-bottom: 1px solid $border-color;
+                    li {
+                        @extend %text-capitalize, %theme-color, %mr-20;
+                        @include breakpoint(xxl) {
+                            margin-right: 30px;
+                        }
+                        &:first-child {
+                            i {
+                                color: $theme-color;
+                            }
+                        }
+                        &:last-child {
+                            @extend %mr-0;
+                            a {
+                                color: $theme-color-3;
+                            }
+                            &:hover {
+                                a {
+                                    color: $theme-color-3;
+                                }
+                            }
+                            i {
+                                color: $theme-color-3;
+                            }
+                        }
+                        i {
+                            @extend %mr-5;
+                        }
+                    }
+                }
+                h5 {
+                    @extend %mb-0, %text-600;
+                    line-height: 1.5;
+                    a {
+                        @extend %text-2;
+                    }
+                }
+                .lab-btn {
+                    padding: 10px 30px;
+                }
+            }
+        }
+    }
+    &--three {
+        .blog {
+            &__item {
+                @extend %bg-white, %hidden, %p-15;
+                @include border-radius(10px);
+                @include transition($transition);
+                &:hover {
+                    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+                    .blog {
+                        &__thumb {
+                            img {
+                                transform: scale(1.2);
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %hidden;
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__content {
+                @extend %p-15, %mt-10;
+                h3 {
+                    @extend %mb-0;
+                }
+                ul {
+                    @extend %flex;
+                    padding-block: 15px;
+                    li {
+                        @extend %text-capitalize, %theme-color, %d-inline-block, %mr-30;
+                        &:first-child {
+                            i {
+                                color: $theme-color;
+                            }
+                        }
+                        &:last-child {
+                            a {
+                                color: $theme-color-3;
+                            }
+                            &:hover {
+                                a {
+                                    color: $theme-color-3;
+                                }
+                            }
+                            i {
+                                color: $theme-color-3;
+                            }
+                        }
+                        i {
+                            @extend %mr-5;
+                        }
+                    }
+                }
+                h5 {
+                    @extend %mb-0, %text-600;
+                    line-height: 1.5;
+                }
+                p {
+                    @extend %mb-0;
+                }
+            }
+        }
+    }
+    &--single {
+        .blog {
+            &__item {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                border-bottom: 1px solid $border-color;
+                &:hover {
+                    .blog {
+                        &__thumb {
+                            img {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                margin-top: 15px;
+            }
+            &__meta {
+                ul {
+                    li {
+                        @include breakpoint(max-sm) {
+                            padding-block: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.quote {
+    @extend %p-30, %flex;
+    background: url(../../assets/images/bg/01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    i {
+        @extend %bg-theme, %white-color, %text-center, %mb-15;
+        border-radius: 100%;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        @include font-size(40px);
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+        }
+    }
+    h5 {
+        @extend %white-color, %mb-0;
+        line-height: 1.6;
+        @include breakpoint(sm) {
+            width: calc(100% - 90px);
+            padding-left: 30px;
+        }
+    }
+}

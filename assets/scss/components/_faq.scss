@@ -1,0 +1,189 @@
+.faq {
+    @extend %hidden;
+    .section {
+        &__header {
+            p {
+                max-width: 100%;
+                @include breakpoint(xl) {
+                    @include breakpoint(max-xxl) {
+                        max-width: 90%;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        animation: lab_sideeffect 20s linear infinite;
+    }
+    .accordion {
+        &-item {
+            border: 1px solid #F2F6F9;
+            @extend %hidden;
+            @include border-radius(4px);
+            &:not(:last-child) {
+                margin-block-end: 10px;
+            }
+        }
+    
+        &-button {
+            @include font-size(18px);
+            padding: 15px 20px;
+            font-weight: 700;
+            text-transform: capitalize;
+            border: none;
+            @extend %bg-title, %white-color;
+            .accordion-icon {
+                @include add-prefix(transition, $transition);
+                width: 30px;
+                height: 30px;
+                @include font-size(16px);
+                display: grid;
+                place-items: center;
+                border-radius: 50%;
+                // background-color: $theme-color;
+                // color: $white-color;
+                margin-inline-end: 20px;
+    
+                @include breakpoint(md) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+    
+            .accordion-headerText {
+                width: calc(100% - 50px - 20px);
+            }
+    
+            &:not(.collapsed) {
+                border-bottom: none;
+                background-color: $theme-color-2;
+                color: $white-color;
+                box-shadow: none;
+    
+                &:after {
+                    background-color: $white-color;
+                    @include add-prefix(transform, rotate(90deg));
+                }
+    
+                &:before {
+                    opacity: 0;
+                }
+    
+                .accordion-icon {
+                    background-color: $white-color;
+                    color: $title-color;
+                }
+            }
+    
+            &:focus {
+                box-shadow: none;
+            }
+            &:before,
+            &:after {
+                @include add-prefix(transition, $transition);
+                @extend %abs;
+                background-color: $white-color;
+                background-image: none;
+            }
+    
+            &:after {
+                height: 20px;
+                width: 2px;
+                right: 30px;
+            }
+    
+            &:before {
+                right: 21px;
+                width: 20px;
+                height: 2px;
+            }
+            &.collapsed {
+                .accordion-icon {
+                    @extend %bg-white, %title-color;
+                }
+                &::after, &::before {
+                    @extend %bg-white;
+                }
+            }
+        }
+        &-collapse {
+            @extend %bg-white;
+        }
+        &-body {
+            padding: 15px 20px;
+            p {
+                @extend %mb-0;
+            }
+        }
+    }
+    &--two {
+        .faq {}
+        .accordion {
+            &-button {
+                // @extend %bg-white, %title-color;
+                background: $white-color;
+                color: $title-color;
+                border-radius: 4px !important;
+                &:not(.collapsed) {
+                    background-color: $white-color;
+                    color: $theme-color;
+        
+                    &:after {
+                        background-color: $theme-color;
+                    }
+        
+                    &:before {
+                        opacity: 0;
+                    }
+        
+                    .accordion-icon {
+                        background-color: $theme-color;
+                        color: $white-color;
+                    }
+                }
+        
+                &:focus {
+                    box-shadow: none;
+                }
+                &:before,
+                &:after {
+                    @include add-prefix(transition, $transition);
+                    @extend %abs;
+                    background-color: $white-color;
+                    background-image: none;
+                }
+        
+                &:after {
+                    height: 20px;
+                    width: 2px;
+                    right: 30px;
+                }
+        
+                &:before {
+                    right: 21px;
+                    width: 20px;
+                    height: 2px;
+                }
+                &.collapsed {
+                    .accordion-icon {
+                        @extend %bg-title;
+                        color: $white-color;
+                    }
+                    &::after, &::before {
+                        @extend %bg-title;
+                    }
+                }
+            }
+            &-collapse {
+                @extend %bg-white;
+            }
+            &-body {
+                padding: 0px 40px 30px 80px;
+                p {
+                    @extend %mb-0;
+                }
+            }
+        }
+    }
+}

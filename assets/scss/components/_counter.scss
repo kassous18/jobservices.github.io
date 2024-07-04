@@ -1,0 +1,50 @@
+.counter {
+    &__area {
+        margin-top: -40px;
+    }
+    &__item {
+        @extend %bg-white, %text-center, %p-30;
+    }
+    &__count {
+        h2 {
+            @extend %title-color, %mb-10;
+        }
+    }
+    &__title {
+        h6 {
+            @extend %text-400;
+        }
+    }
+    &--one {
+        .section__header {
+            max-width: 600px;
+            h2 {
+                @extend %white-color;
+            }
+            h5 {
+                @extend %white-color;
+            }
+        }
+        .counter {
+            &__item {
+                padding: 60px 30px;
+                @include border-radius(10px);
+            }
+            &__thumb {
+                @extend %mb-25;
+            }
+            &__count {
+                h2 {
+                    @extend %title-color, %d-inline-block;
+                }
+            }
+            &__title {
+                h6 {
+                    @extend %title-color, %mb-0, %text-uppercase, %text-700;
+                    @include font-size(16px);
+                }
+            }
+        }
+    }
+    
+}
